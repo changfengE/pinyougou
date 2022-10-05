@@ -11,6 +11,31 @@
     height: 100%;
 }
 
+
+/* 轮播图开始 */
+
+.fl {
+    position: relative;
+}
+
+.arrow-l,
+.arrow-r::after {
+    position: absolute;
+    top: calc(50% - 15px);
+    line-height: 30px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.arrow-r::after {
+    font-family: 'icomoon';
+    content: '\e920';
+    right: 0;
+}
+
+
+/* 轮播图结束 */
+
 .newsflash {
     float: right;
     width: 250px;
