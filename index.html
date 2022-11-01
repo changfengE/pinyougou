@@ -16,6 +16,10 @@
     <!-- 公共样式 -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <!-- 因为index.js依赖animate.js -->
+    <!-- 所以，这个animate.js需要写到index.js的上面 -->
+    <script src="js/124_animate.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -230,13 +234,29 @@
     <div class="w">
         <div class="main">
             <div class="focus fl">
-                <a href="#" class="arrow-l">
-                    &lt;
-                </a>
-                <a href="#" class="arrow-r"></a>
+                <!-- 左侧按钮 -->
+                <a href="javascript:;" class="arrow-l"> </a>
+                <!-- 右侧按钮 -->
+                <a href="javascript:;" class="arrow-r"></a>
+                <!-- 滚动区域 -->
                 <ul>
-                    <li><img src="upload/focus1.png" alt="focus1"></li>
+                    <li>
+                        <a href="#"><img src="upload/focus1.png" alt="focus1" /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus2.jpg" alt="focus1" /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus3.jpg" alt="focus1" /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus4.jpg" alt="focus1" /></a>
+                    </li>
                 </ul>
+                <!-- 小圆圈 -->
+                <ol class="circle">
+
+                </ol>
             </div>
             <div class="newsflash">
                 <div class="news">
