@@ -15,10 +15,11 @@ function animate(obj, target, callback) {
             clearInterval(obj.timer);
             // 回调函数写到定时器结束里面
             // 判断是否有callback参数传入
-            if (callback) {
+            // if (callback) {
 
-                callback();
-            }
+            //     callback();
+            // }
+            callback && callback(); // 该写法效果同上
         }
         obj.style.left = obj.offsetLeft + step + 'px';
     }, 15)
