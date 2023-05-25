@@ -1,0 +1,183 @@
+/*
+ * @Author: 3517134128@qq.com 
+ * @Email: 3517134128@qq.com
+ * @Date: 2023-05-26 00:01:22 
+ * @Last Modified by:   undefined 
+ * @Last Modified time: 2023-05-26 00:01:22
+ * @Description: 购物车模块（jQuery）
+ */
+
+@jdred: #E2231A;
+@bggrey: #f5f5f5;
+@bdgrey: #e9e9e9;
+@bgorange:#fff4e7;
+.logo {
+    width: unset;
+
+    h1 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    b {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+}
+
+.cart-filter-bar {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: @jdred;
+    border-bottom: 1px solid @jdred;
+}
+
+.cart-thead {
+    margin-bottom: 15px;
+    height: 50px;
+    line-height: 50px;
+    background-color: @bggrey;
+    border: 1px solid @bdgrey;
+    border-top: 0;
+
+    &>div {
+        float: left;
+    }
+
+    .t-checkbox {
+        margin: 0 80px 0 10px;
+    }
+
+    .t-goods {
+        margin-right: 470px;
+    }
+
+    .t-price {
+        margin-right: 110px;
+    }
+
+    .t-num {
+        margin-right: 135px;
+    }
+
+    .t-sum {
+        margin-right: 110px;
+    }
+
+    .t-action {
+        margin-right: 115px;
+    }
+}
+
+.cart-item {
+    padding: 20px 0 0 10px;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 1px solid @bdgrey;
+    border-top: 3px solid darken(@bdgrey, 10%);
+    &:hover{
+        background-color: @bgorange;
+    }
+    &>div {
+        float: left;
+    }
+
+    .p-checkbox {
+        margin-right: 30px;
+    }
+
+    .p-goods {
+        margin-right: 270px;
+
+        img {
+            float: left;
+            padding: 3px;
+            margin-right: 5px;
+            border: 1px solid @bdgrey;
+        }
+
+        .p-msg {
+            margin-top: 5px;
+            width: 300px;
+        }
+    }
+
+    .p-price {
+        margin-right: 70px;
+    }
+
+    .p-num {
+        margin-right: 90px;
+        .decrement,.increment{
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+            border: 1px solid @bdgrey;
+            vertical-align: top;
+            background-color: #fff;
+        }
+        .itxt{
+            width: 50px;
+            text-align: center;
+            color: #454545;
+            border: 1px solid @bdgrey;     
+        }
+    }
+    .p-sum{
+        margin-right: 100px;
+    }
+}
+.cart-floatbar{
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid @bdgrey;
+    &>div{
+        float: left;
+    }
+    .select-all{
+        margin-right: 35px;
+        .checkall{
+            vertical-align: middle;
+            margin: 0 5px 0 10px;
+        }
+    }
+    .operation{
+        .clear-all{
+            margin-left: 30px;
+            font-weight: bold;
+        }
+    }
+    .toolbar-right{
+        float: right;
+        &>div{
+            float: left;
+        }
+        .amount-sum{
+            margin-right: 20px;
+            em{
+                padding: 2px;
+                font-weight: bold;
+                color: @jdred;
+            }
+        }
+        .price-sum{
+            margin-right: 20px;
+            em{
+                font-size: 16px;
+                font-weight: bold;
+                color: @jdred;
+            }
+        }
+        .btn-area{
+            cursor: pointer;
+            padding:0 20px;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: lighten(@jdred,10%);
+        }
+    }
+}
