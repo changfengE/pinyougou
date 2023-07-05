@@ -446,40 +446,24 @@ li.current {
     position: fixed;
     top: calc(50% - 170px);
     left: calc(50% - 600px - 66px - 5px);
+    display: none;
 }
 
 .lift_nav ul li {
+    cursor: pointer;
     width: 66px;
-    margin-right: 5px;
-}
-
-.lift_nav ul li:first-child,
-.lift_nav ul li:first-child a {
-    border-bottom: 1px solid transparent;
-    color: #fff;
-    background-color: #c81623;
-}
-
-.lift_nav ul li:hover {
-    background-color: #c81623;
-}
-
-.lift_nav ul li:hover a {
-    border-bottom: 1px solid transparent;
-}
-
-.lift_nav ul li a {
-    display: block;
-    margin: 0 auto;
-    width: 56px;
     height: 31px;
     line-height: 31px;
-    border-bottom: 1px solid #ccc;
     text-align: center;
+    margin-right: 5px;
+    border-bottom: 1px solid #ccc;
 }
 
-.lift_nav ul li:hover a {
-    color: #fff!important;
+.lift_nav ul li:hover,
+.lift_nav ul li.current {
+    color: #fff;
+    background-color: #c81623;
+    border-bottom: 1px solid transparent;
 }
 
 
@@ -952,7 +936,7 @@ li.current {
 
 .col_660 .price {
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 115px;
 }
 

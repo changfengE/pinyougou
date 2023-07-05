@@ -1,3 +1,11 @@
+/*
+ * @Author: 3517134128@qq.com 
+ * @Email: 3517134128@qq.com
+ * @Date: 2023-07-03 19:38:08 
+ * @Last Modified by: 3517134128@qq.com
+ * @Last Modified time: 2023-07-04 14:41:55
+ * @Description: 新增电梯导航
+ */
 window.addEventListener('load', function() {
     // 1.显示隐藏左右箭头
     var arrow_l = document.querySelector('.arrow-l');
@@ -123,4 +131,53 @@ window.addEventListener('load', function() {
     var timer = setInterval(function() {
         arrow_r.click();
     }, 5000)
+});
+
+$(function() {
+    // 当点击了电梯导航li，不需要执行页面滚动事件里面的li的北京选择添加current
+    // 节流阀（互斥锁）
+    var liftflag = true;
+
+    // 1.显示隐藏电梯导航
+    var liftTop = $('.recom').offset().top;
+
+    function toggleTool() {
+        if ($(document).scrollTop() >= liftTop) {
+            $('.lift_nav').fadeIn();
+        } else {
+            $('.lift_nav').fadeOut();
+        }
+    }
+
+    function liftBg() {
+        $('.floor .w').each(function(index, element) {
+            if ($(document).scrollTop() >= $(element).offset().top) {
+                $('.lift_nav li').eq(index).addClass('current').siblings().removeClass();
+            }
+        });
+    }
+    toggleTool();
+    liftBg();
+    $(window).scroll(function() {
+        toggleTool();
+        // 3.页面滚动到某个内容区域，左侧电梯导航li相应添加移除current
+        if (liftflag) {
+            liftBg();
+        }
+    });
+    // 2.点击电梯导航页面就可以滚动到相应区域
+    $('.lift_nav li').click(function() {
+        liftflag = false;
+        // 每次点击li就需要计算出页面要去往的位置
+        // 选出对应索引号的内容区的盒子，计算其offset().top
+        var current = $('.floor .w').eq($(this).index()).offset().top;
+        // 页面滚动效果
+        $('body,html').stop().animate({
+            scrollTop: current
+        }, function() {
+            liftflag = true;
+        });
+        // 点击之后，让当前的li添加current类名，其他的移除
+        $(this).addClass('current').siblings().removeClass();
+    });
 })
