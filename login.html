@@ -24,25 +24,30 @@
     <div class="loginarea">
         <div class="main_box">
             <div class="login_box">
-                <ul>
-                    <li><a href="#">扫描登陆</a></li>
-                    <li></li>
-                    <li class="selected"><a href="#">账户登陆</a></li>
-                </ul>
-                <span>公共场所不建议自动登录，以免账号丢失</span>
-                <form action="" class="login_info">
-                    <i></i><input type="text" placeholder="邮箱/用户名/手机号" />
-                    <i></i><input type="password" name="" id="" placeholder="请输入密码">
-                    <input type="checkbox" name="" id=""><span>自动登陆</span>
-                    <a href="#" class="forgetpwd">忘记密码?</a><input type="submit" value="登录">
-                </form>
-                <div class="otherway">
-                    <a href="#"><img src="img/qq.png" alt="其他方式" /></a>
-                    <a href="#"><img src="img/weibo.png" alt="其他方式" /></a>
-                    <a href="#"><img src="img/paybaby.png" alt="其他方式" /></a>
-                    <a href="#"><img src="img/wechat.png" alt="其他方式" /></a>
+                <div class="tab_nav">
+                    <a href="#" data-id="0">扫描登陆</a>
+                    <a href="#" class="selected" data-id="1">账户登陆</a>
                 </div>
-                <a href="register.html" class="toregister">立即注册</a>
+                <div class="tab_panel panel1">
+                    <img src="./img/QRcode.png" alt="">
+                    <div>请使用品优购APP扫码登陆</div>
+                </div>
+                <div class="tab_panel panel2">
+                    <span>公共场所不建议自动登录，以免账号丢失</span>
+                    <form action="" class="login_info">
+                        <i></i><input type="text" placeholder="邮箱/用户名/手机号" />
+                        <i></i><input type="password" placeholder="请输入密码">
+                        <input type="checkbox"><span>自动登陆</span>
+                        <a href="#" class="forgetpwd">忘记密码?</a><input type="submit" value="登录">
+                    </form>
+                    <div class="otherway">
+                        <a href="#"><img src="img/qq.png" alt="其他方式" /></a>
+                        <a href="#"><img src="img/weibo.png" alt="其他方式" /></a>
+                        <a href="#"><img src="img/paybaby.png" alt="其他方式" /></a>
+                        <a href="#"><img src="img/wechat.png" alt="其他方式" /></a>
+                    </div>
+                    <a href="register.html" class="toregister">立即注册</a>
+                </div>
             </div>
         </div>
     </div>
@@ -69,7 +74,7 @@
             </div>
         </footer>
     </div>
-
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

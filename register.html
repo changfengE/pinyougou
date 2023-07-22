@@ -28,16 +28,43 @@
             <div class="reg_form">
                 <form action="">
                     <ul>
-                        <li><label for="">手机号：</label><input type="text" class="inp"><span class="error"><i class="error_icon"></i>手机号码格式不正确，请从新输入</span></li>
-                        <li><label for="">短信验证码：</label><input type="text" class="inp"><span class="success"><i class="success_icon"></i>短信验证码输入正确</span></li>
-                        <li><label for="">登录密码：</label><input type="password" class="inp"><span class="error"><i class="error_icon"></i>手机号码格式不正确，请从新输入</span></li>
-                        <li class="safe">安全程度 <em class="ruo">弱</em><em class="zhong">中</em><em class="qiang">强</em></li>
-                        <li><label for="">确认密码：</label><input type="password" class="inp"><span class="error"><i class="error_icon"></i>手机号码格式不正确，请从新输入</span></li>
+                        <li>
+                            <label for="">用户名：</label>
+                            <input type="text" class="inp" name="username">
+                            <span class="error"></span>
+                        </li>
+                        <li>
+                            <label for="">手机号：</label>
+                            <input type="text" class="inp" name="phone">
+                            <span class="error"></span>
+                        </li>
+                        <li>
+                            <label for="">登录密码：</label>
+                            <input type="password" class="inp" name="password">
+                            <span class="error"></span>
+                        </li>
+                        <li class="safe">
+                            安全程度
+                            <em class="ruo">弱</em><em class="zhong">中</em><em class="qiang">强</em>
+                        </li>
+                        <li>
+                            <label for="">确认密码：</label>
+                            <input type="password" class="inp" name="confirm">
+                            <span class="error"></span>
+                        </li>
+                        <li>
+                            <label for="">短信验证码：</label>
+                            <input type="text" class="inp" name="code">
+                            <a href="javascript:;" class="code">发送验证码</a>
+                            <span class="success"></span>
+                        </li>
                         <li class="agree">
-                            <input type="checkbox" name="" id="" />同意协议并注册
+                            <i class="icon-queren"></i>同意协议并注册
                             <a href="#">《知晓用户协议》</a>
                         </li>
-                        <li><input type="submit" value="完成注册" class="btn"></li>
+                        <li>
+                            <input type="submit" value="完成注册" class="btn">
+                        </li>
                     </ul>
                 </form>
             </div>
@@ -64,6 +91,7 @@
             </div>
         </footer>
     </div>
+    <script src="./js/register.js"></script>
 </body>
 
 </html>

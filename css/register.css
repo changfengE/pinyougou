@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../icomoon/fonts/icomoon.eot?ee4plc');
+    src: url('../icomoon/fonts/icomoon.eot?ee4plc#iefix') format('embedded-opentype'), url('../icomoon/fonts/icomoon.ttf?ee4plc') format('truetype'), url('../icomoon/fonts/icomoon.woff?ee4plc') format('woff'), url('../icomoon/fonts/icomoon.svg?ee4plc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id 3944952 */
+    src: url('../iconfont/iconfont.woff2?t=1690022443655') format('woff2'), url('../iconfont/iconfont.woff?t=1690022443655') format('woff'), url('../iconfont/iconfont.ttf?t=1690022443655') format('truetype');
+}
+
 .w {
     width: 1200px;
     margin: 0 auto;
@@ -45,6 +60,7 @@ header {
 }
 
 .reg_form ul li {
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -60,9 +76,27 @@ header {
     border: 1px solid #ccc;
 }
 
+.code {
+    position: absolute;
+    right: 280px;
+    line-height: 37px;
+    color: #40b83f;
+}
+
+.code:hover {
+    color: #ccc !important;
+}
+
 .error {
     color: #c81523;
 }
+
+.success {
+    color: green;
+}
+
+
+/* .error_icon::before  */
 
 .error_icon,
 .success_icon {
@@ -72,10 +106,6 @@ header {
     width: 20px;
     height: 20px;
     background: url(../img/error.png)no-repeat;
-}
-
-.success {
-    color: green;
 }
 
 .success_icon {
@@ -110,6 +140,19 @@ header {
 .agree input {
     margin-right: 12px;
     vertical-align: middle;
+}
+
+.icon-queren::before,
+.icon-queren2::before {
+    font-family: 'iconfont';
+    content: '\e622';
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.icon-queren2::before {
+    content: '\e656';
+    color: #40b83f;
 }
 
 .agree a {
