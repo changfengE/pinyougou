@@ -34,9 +34,10 @@
                 </div>
                 <div class="tab_panel panel2">
                     <span>公共场所不建议自动登录，以免账号丢失</span>
-                    <form action="" class="login_info">
-                        <i></i><input type="text" placeholder="邮箱/用户名/手机号" />
-                        <i></i><input type="password" placeholder="请输入密码">
+                    <form action="" class="login_info" autocomplete="off">
+                        <i></i><input type="text" placeholder="邮箱/用户名/手机号" name="username" required/>
+                        <i></i><input type="password" placeholder="请输入密码" required>
+                        <input type="checkbox" name="agree"><span>已阅读并同意协议<div class="rules">《服务条款》</div></span>
                         <input type="checkbox"><span>自动登陆</span>
                         <a href="#" class="forgetpwd">忘记密码?</a><input type="submit" value="登录">
                     </form>

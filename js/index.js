@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-07-03 19:38:08 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-07-04 14:41:55
+ * @Last Modified time: 2023-07-24 12:55:29
  * @Description: 新增电梯导航
  */
 window.addEventListener('load', function() {
@@ -180,4 +180,30 @@ $(function() {
         // 点击之后，让当前的li添加current类名，其他的移除
         $(this).addClass('current').siblings().removeClass();
     });
+
+    /* 渲染用户名
+    2023年7月24日12点28分
+    */
+    // 获取第2、3个li
+    const uli = document.querySelector('.logreg li:nth-of-type(2)')
+    const logout = uli.nextElementSibling
+        // 渲染函数
+    function render() {
+        // 读取本地
+        const uname = localStorage.getItem('uname')
+        if (uname) {
+            uli.innerHTML = `<a href='javascript:;' class='user'>${uname}</a>`
+            logout.innerHTML = `<a href='javascript:;'>退出登陆 </a>`
+        } else {
+            uli.innerHTML = `<a href="login.html ">请登录</a>`
+            logout.innerHTML = `<a href="register.html" class="style_red">免费注册</a>`
+        }
+    }
+    render()
+        // 点击退出登陆模块
+    logout.addEventListener('click', function() {
+        // 删除本数据
+        localStorage.removeItem('uname')
+        render()
+    })
 })

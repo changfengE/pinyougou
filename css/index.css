@@ -20,6 +20,16 @@
     position: relative;
 }
 
+.logreg ul li a {
+    padding: 0 10px;
+    border-left: 1px solid #666;
+}
+
+.user::before {
+    content: '\e931';
+    font-family: 'icomoon';
+}
+
 .focus ul {
     overflow: hidden;
     position: absolute;
