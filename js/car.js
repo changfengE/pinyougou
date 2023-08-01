@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-05-26 00:00:39 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-07-03 17:06:43
+ * @Last Modified time: 2023-08-01 20:41:29
  * @Description: 购物车模块（jQuery）
  */
 $(function() {
@@ -132,4 +132,81 @@ $(function() {
         $('.checkall').prop('checked', false);
     });
 
-})
+});
+(function() {
+    /* 2023年8月1日13点49分
+    js进阶，动态渲染商品信息
+    */
+    const goodsList = [{
+            id: '4001172',
+            gname: '【5本26.8元】经典儿童文学彩图青少版八十天环游地球中学生语文必读',
+            price: 12.61,
+            picture: './upload/p1.jpg',
+            count: 2,
+            spec: { color: '彩色' }
+        },
+        {
+            id: '4001009',
+            gname: '竹制干泡茶盘正方形沥水茶台品茶盘',
+            price: 109.8,
+            picture: 'https://yanxuan-item.nosdn.127.net/2d942d6bc94f1e230763e1a5a3b379e1.png',
+            count: 3,
+            spec: { size: '40cm*40cm', color: '黑色' }
+        },
+        {
+            id: '4001874',
+            gname: '古法温酒汝瓷酒具套装白酒杯莲花温酒器',
+            price: 488,
+            picture: 'https://yanxuan-item.nosdn.127.net/44e51622800e4fceb6bee8e616da85fd.png',
+            count: 1,
+            spec: { color: '青色', sum: '一大四小' }
+        },
+        {
+            id: '4001649',
+            gname: '大师监制龙泉青瓷茶叶罐',
+            price: 139,
+            picture: 'https://yanxuan-item.nosdn.127.net/4356c9fc150753775fe56b465314f1eb.png',
+            count: 1,
+            spec: { size: '小号', color: '紫色' },
+            gift: '50g茶叶,清洗球,奔驰'
+        }
+    ];
+    // 1.根据数据渲染页面
+    const itemList = document.querySelector('.cart-item-list')
+    let data = goodsList.map(({ gname, price, picture, count, spec, gift }) => {
+        // 规格文本处理
+        const specText = Object.values(spec).join('/')
+            // 赠品文本处理
+        const giftBlock = gift ? gift.split(',').map(item => `<span class="gifts">【赠品】${item}</span>`).join('<br>') : ''
+            // 小计模块，为了提升精度，需要化为整数计算
+        const subTotal = ((price * 100 * count) / 100).toFixed(2)
+        return `<div class="cart-item">
+            <div class="p-checkbox">
+                <input type="checkbox" name="" id="" class="j-checkbox">
+            </div>
+            <div class="p-goods">
+                <div class="p-img">
+                    <img src="${picture}" alt="">
+                </div>
+                <div class="p-msg">${gname}</div>
+                ${giftBlock}
+            </div>
+            <div class="p-spec">${specText}</div>
+            <div class="p-price">￥${price.toFixed(2)}</div>
+            <div class="p-num">
+                <div class="quantity-form">
+                    <a href="javascript:;" class="decrement">-</a><input type="text" class="itxt" value="${count}"><a href="javascript:;" class="increment">+</a>
+                </div>
+            </div>
+            <div class="p-sum">￥${subTotal}</div>
+            <div class="p-action">
+                <a href="javascript:;">删除</a>
+            </div>
+        </div>`
+    }).join('');
+    // 合计模块
+    itemList.innerHTML = data
+        // 计算总价模块
+        // const total = goodsList.reduce((prev, next) => prev + (next.price * 100 * next.count) / 100, 0)
+        // document.querySelector('.price-sum').innerHTML = `总价：<em>￥${total}</em>`
+})();
